@@ -61,7 +61,7 @@ function Logo() {
 
 export default function Home() {
   return (
-    <>
+    <div className="page">
       {/* Reusable logo mark (monogram + colour swoosh) */}
       <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true">
         <symbol id="mk-mark" viewBox="0 0 132 96">
@@ -75,7 +75,22 @@ export default function Home() {
 
       <header className="hero">
         <div className="hero-photo">
-          <Image src="/images/hero-models.jpg" alt="Two models wearing markalash t-shirts" fill priority sizes="(max-width: 991.98px) 100vw, 64vw" />
+          <Image src="/images/hero-models.jpg" alt="Two models wearing markalash t-shirts" fill priority sizes="(max-width: 1199.98px) 100vw, 1075px" />
+          <div className="coming" aria-label="Coming soon – same ideas, bigger possibilities">
+            <span className="brush">
+              Coming<span>Soon</span>
+            </span>
+            <svg className="swash" viewBox="0 0 240 40" aria-hidden="true">
+              <path d="M6 32 C 70 18, 150 8, 234 6" fill="none" stroke="#e8287c" strokeWidth="9" strokeLinecap="round" />
+            </svg>
+            <p className="sub">
+              Same ideas.
+              <br />
+              Bigger
+              <br />
+              possibilities.
+            </p>
+          </div>
         </div>
 
         <div className="container-fluid hero-inner px-4 hero-pad">
@@ -108,21 +123,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="coming" aria-label="Coming soon – same ideas, bigger possibilities">
-          <span className="brush">
-            Coming<span>Soon</span>
-          </span>
-          <svg className="swash" viewBox="0 0 240 40" aria-hidden="true">
-            <path d="M6 32 C 70 18, 150 8, 234 6" fill="none" stroke="#e8287c" strokeWidth="9" strokeLinecap="round" />
-          </svg>
-          <p className="sub">
-            Same ideas.
-            <br />
-            Bigger
-            <br />
-            possibilities.
-          </p>
-        </div>
       </header>
 
       <main>
@@ -152,7 +152,7 @@ export default function Home() {
             {tiles.map(({ src, alt, title, text }, i) => (
               <div className={i === tiles.length - 1 ? "col col-12" : "col"} key={title}>
                 <figure className="tile m-0">
-                  <Image src={src} alt={alt} fill sizes="(max-width: 767.98px) 50vw, (max-width: 991.98px) 33vw, 20vw" />
+                  <Image src={src} alt={alt} fill sizes="(max-width: 767.98px) 50vw, (max-width: 991.98px) 33vw, 336px" />
                   <figcaption>
                     <strong>{title}</strong>
                     <span>{text}</span>
@@ -214,6 +214,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 }
